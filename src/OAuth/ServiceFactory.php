@@ -171,6 +171,7 @@ class ServiceFactory
             $storage,
             $this->resolveScopes($serviceName, $scopes),
             $baseApiUri,
+            true,
             $apiVersion
         );
     }
