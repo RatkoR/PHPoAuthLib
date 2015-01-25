@@ -122,9 +122,10 @@ class Facebook extends AbstractService
         TokenStorageInterface $storage,
         $scopes = array(),
         UriInterface $baseApiUri = null,
+        $stateParameterInAutUrl = true,
         $apiVersion = ""
     ) {
-        parent::__construct($credentials, $httpClient, $storage, $scopes, $baseApiUri, false, $apiVersion);
+        parent::__construct($credentials, $httpClient, $storage, $scopes, $baseApiUri, $stateParameterInAutUrl, $apiVersion);
 
         if (null === $baseApiUri) {
             $this->baseApiUri = new Uri('https://graph.facebook.com'.$this->getApiVersionString().'/');

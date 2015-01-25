@@ -129,9 +129,10 @@ class GitHub extends AbstractService
         ClientInterface $httpClient,
         TokenStorageInterface $storage,
         $scopes = array(),
-        UriInterface $baseApiUri = null
+        UriInterface $baseApiUri = null,
+        $stateParameterInAutUrl = true
     ) {
-        parent::__construct($credentials, $httpClient, $storage, $scopes, $baseApiUri);
+        parent::__construct($credentials, $httpClient, $storage, $scopes, $baseApiUri, $stateParameterInAutUrl);
 
         if (null === $baseApiUri) {
             $this->baseApiUri = new Uri('https://api.github.com/');
